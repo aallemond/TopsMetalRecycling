@@ -1,5 +1,17 @@
+
 [{ "type":"Bare Copper Wire", "price":"$3.90", "description":"Typically consists of uncoated, unalloyed copper wire, and it's often found in electrical cables and wiring. No less than 16 gauge thickness. No tarnish, patina, or oxidation. No connections, connectors or attachements." },
- { "type":"#1 Copper", "price":"$3.80", "description":"Consists of bus bars, and wire with at least 1/16th inch diamater. Clean copper tubing free of fittings, paint, solder, serious corrosion and other materials would go number 1." }
+ { "type":"#1 Copper", "price":"$3.80", "description":"Consists of bus bars, and wire with at least 1/16th inch diamater. Clean copper tubing free of fittings, paint, solder, serious corrosion and other materials would go number 1." },
+ { "type":"#2 Copper", "price":"$3.70", "description":"Tubing, pipe, or wire. Slightly dirty in some way. Unalloyed but will have some type of solder, corrosion, paint or other coating."},
+ { "type":"Sheet Copper", "price":"$3.45", "description":"Gutters, Flashing"},
+ { "type":"#1 Insulated Copper Wire 70%", "price":"$1.95", "description":"Unalloyed, untinned, and uncoated copper wire that has a single layer of insulation and is 16-gauge thickness or larger, if insulation was removed it would be considered bare bright."},
+ { "type":"#1 Insulated Copper Wire 65%", "price":"$1.80", "description":"Unalloyed, thicker than 16-gauge and has heavy plastic or double insulation."},
+ { "type":"#2 Insulated copper wire 46%", "price":"$1.25", "description":""},
+ { "type":"#2 Insulated copper wire 35%", "price":"$0.80", "description":"Usually communication, telephone, network cables and wires with thick insulation."},
+ { "type":"Christmas lights", "price":"$0.20", "description":""},
+ { "type":"Automotive engine/dash harness wire", "price":"$1.20", "description":"Automotive type engine/dash harness wire. Plugs are allowed, fuseboxes and junction boxes must be removed."}
+
+
+
 ]
 
 

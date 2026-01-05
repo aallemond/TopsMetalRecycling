@@ -1,12 +1,12 @@
 import React from "react";
-import {
-  useReactTable,
-  getCoreRowModel,
-  flexRender,
-} from "@tanstack/react-table";
-
+import { useReactTable, getCoreRowModel,flexRender,} from "@tanstack/react-table";
 import copperData from "./COPPER.json";
+import brassData from "./BRASS.json";
+import aluminumData from "./ALUMINUM.json"
+import stainlessData from "./STAINLESS.json"
+import miscData from "./MISC.json"
 
+//Table Headers
 const columns = [
 
   {
@@ -17,21 +17,47 @@ const columns = [
     accessorKey: "price",
     header: "Price/lb.",
   },
-  {
-    accessorKey: "description",
-    header: "Description",
-  },
+  
 ];
-
-export default function ScrapTable() {
-  const table = useReactTable({
+//Copper Table Data
+export default function CopperTable() {
+  const copperTable = useReactTable({
     data: copperData,
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
 
-  return (
-    <table style={{ borderCollapse: "collapse", width: "100%" }}>
+  //Brass Table Data
+  const brassTable = useReactTable({
+    data: brassData,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+  });
+
+  //Alum Table Data
+  const alumTable = useReactTable({
+    data: aluminumData,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+  });
+
+  //Stainless Table Data
+  const stainlessTable = useReactTable({
+    data: stainlessData,
+    columns,
+    getCoreRowModel: getCoreRowModel()
+  });
+
+  //Misc Table Data
+  const miscTable = useReactTable({
+    data: miscData,
+    columns,
+    getCoreRowModel: getCoreRowModel()
+  });
+
+  //Function to render table for each dataset
+   const renderTable = table => (
+    <table style={{ borderCollapse: "collapse", width: "100%", marginBottom: 32 }}>
       <thead>
         {table.getHeaderGroups().map(headerGroup => (
           <tr key={headerGroup.id}>
@@ -69,6 +95,39 @@ export default function ScrapTable() {
         ))}
       </tbody>
     </table>
+  );
+
+
+  
+
+  return (
+   <div>
+    
+    <h2>Copper</h2>
+    <h3>Prices As Of 12/15/25</h3>
+    {renderTable(copperTable)}
+
+    <h1>Other Scrap Categories</h1>
+    <h2>Brass</h2>
+    {renderTable(brassTable)}
+
+    <h2>Aluminum & Coolers</h2>
+    <h3>Cash paid at sale except A/C rads</h3>
+    {renderTable(alumTable)}
+
+    <h2>Common Stainless Steel</h2>
+    {renderTable(stainlessTable)}
+
+    <h2>Miscellaneous</h2>
+    <h3>Cash Paid at Time of Sale</h3>
+    {renderTable(miscTable)}
+
+
+    </div>
+
+
+
+    
   );
 }
 
