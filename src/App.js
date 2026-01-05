@@ -1,10 +1,14 @@
 import React from "react";
 import { useReactTable, getCoreRowModel,flexRender,} from "@tanstack/react-table";
-import copperData from "./COPPER.json";
-import brassData from "./BRASS.json";
-import aluminumData from "./ALUMINUM.json"
-import stainlessData from "./STAINLESS.json"
-import miscData from "./MISC.json"
+import copperData from "./components/COPPER.json";
+import brassData from "./components/BRASS.json";
+import aluminumData from "./components/ALUMINUM.json"
+import stainlessData from "./components/STAINLESS.json"
+import miscData from "./components/MISC.json"
+import circuitBoardData from "./components/CIRCUITBOARD.json"
+import ramData from "./components/RAM.json"
+import cpuData from "./components/CPU.json"
+import Slider from "./components/Slider";
 
 //Table Headers
 const columns = [
@@ -20,7 +24,7 @@ const columns = [
   
 ];
 //Copper Table Data
-export default function CopperTable() {
+export default function Table() {
   const copperTable = useReactTable({
     data: copperData,
     columns,
@@ -51,6 +55,27 @@ export default function CopperTable() {
   //Misc Table Data
   const miscTable = useReactTable({
     data: miscData,
+    columns,
+    getCoreRowModel: getCoreRowModel()
+  });
+
+  //CircuitBoard Table Data
+  const circuitTable = useReactTable({
+    data:circuitBoardData,
+    columns,
+    getCoreRowModel: getCoreRowModel()
+  });
+
+  //RAM Table Data
+  const ramTable = useReactTable({
+    data: ramData,
+    columns,
+    getCoreRowModel: getCoreRowModel()
+  });
+
+  //CPU Table Data 
+  const cpuTable = useReactTable({
+    data:cpuData,
     columns,
     getCoreRowModel: getCoreRowModel()
   });
@@ -101,8 +126,9 @@ export default function CopperTable() {
   
 
   return (
+    
    <div>
-
+    <Slider/>
     <h1>Copper</h1>
     <h3>Prices As Of 12/15/25</h3>
     {renderTable(copperTable)}
@@ -123,6 +149,17 @@ export default function CopperTable() {
     {renderTable(miscTable)}
 
     <h4>Also buying specialty metals and super alloys like inconel and titanium etc. Text me for more info 337-381-2003</h4>
+
+    <h2>E-Scrap</h2>
+
+    <h2>Ciruit Boards</h2>
+    {renderTable(circuitTable)}
+
+    <h2>RAM/Memory</h2>
+    {renderTable(ramTable)}
+
+    <h2>CPU & Chips</h2>
+    {renderTable(cpuTable)}
 
 
     </div>

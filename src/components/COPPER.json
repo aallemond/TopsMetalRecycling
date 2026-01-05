@@ -8,7 +8,8 @@
  { "type":"#2 Insulated copper wire 46%", "price":"$1.25", "description":""},
  { "type":"#2 Insulated copper wire 35%", "price":"$0.80", "description":"Usually communication, telephone, network cables and wires with thick insulation."},
  { "type":"Christmas lights", "price":"$0.20", "description":""},
- { "type":"Automotive engine/dash harness wire", "price":"$1.20", "description":"Automotive type engine/dash harness wire. Plugs are allowed, fuseboxes and junction boxes must be removed."}
+ { "type":"Automotive engine/dash harness wire", "price":"$1.20", "description":"Automotive type engine/dash harness wire. Plugs are allowed, fuseboxes and junction boxes must be removed."},
+ {"type":"Comex Copper", "price":"$4.90"}
 
 
 
