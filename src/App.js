@@ -8,6 +8,7 @@ import miscData from "./components/MISC.json"
 import circuitBoardData from "./components/CIRCUITBOARD.json"
 import ramData from "./components/RAM.json"
 import cpuData from "./components/CPU.json"
+import wholeData from "./components/WHOLE.json"
 import Slider from "./components/Slider";
 
 //Table Headers
@@ -75,6 +76,13 @@ export default function Table() {
 
   //CPU Table Data 
   const cpuTable = useReactTable({
+    data:cpuData,
+    columns,
+    getCoreRowModel: getCoreRowModel()
+  });
+
+  //Whole Unit Table Data
+  const wholeTable = useReactTable({
     data:cpuData,
     columns,
     getCoreRowModel: getCoreRowModel()
@@ -160,6 +168,9 @@ export default function Table() {
 
     <h2>CPU & Chips</h2>
     {renderTable(cpuTable)}
+
+    <h2>Whole Units/Partial Units</h2>
+    {renderTable(wholeTable)}
 
 
     </div>
