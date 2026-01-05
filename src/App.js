@@ -102,8 +102,8 @@ export default function CopperTable() {
 
   return (
    <div>
-    
-    <h2>Copper</h2>
+
+    <h1>Copper</h1>
     <h3>Prices As Of 12/15/25</h3>
     {renderTable(copperTable)}
 
@@ -121,6 +121,8 @@ export default function CopperTable() {
     <h2>Miscellaneous</h2>
     <h3>Cash Paid at Time of Sale</h3>
     {renderTable(miscTable)}
+
+    <h4>Also buying specialty metals and super alloys like inconel and titanium etc. Text me for more info 337-381-2003</h4>
 
 
     </div>
