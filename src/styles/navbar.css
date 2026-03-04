@@ -1,0 +1,57 @@
+.navbar {
+  background: #1f1f1f;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navContainer {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.navLinks a {
+  margin: 0 12px;
+  color: white;
+  text-decoration: none;
+}
+
+.callButton {
+  background: #2235b5;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.callWrapper {
+  position: relative;
+}
+
+.callDropdown {
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background: white;
+  color: black;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.callDropdown a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.callDropdown a:hover {
+  background: #f5f5f5;
+}
+

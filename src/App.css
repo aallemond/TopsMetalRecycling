@@ -1,38 +1,186 @@
-.App {
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+.hero {
+  height: 420px;
+  background-image: url("https://res.cloudinary.com/dxnwbl21t/image/upload/v1767588391/333D4419-ADE8-4E3A-8572-9E336FF1149C_ffqojx.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.heroOverlay {
+  background: rgba(0,0,0,0.6);
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.heroButton {
+  background: #406cef;
+  padding: 16px 34px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.heroButton:hover {
+  background: #406cef;
+}
+
+.aboutSection {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.aboutSection h2 {
+  font-size: 36px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.aboutSection p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.aboutSection::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #406cef;
+  margin: 30px auto;
+}
+
+.metalSection {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.metalCard {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.metalCard h2 {
+  margin-bottom: 20px;
+  border-left: 6px solid #406cef;
+  padding-left: 10px;
+}
+
+.contactSection {
+  background: #1f1f1f;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contactContainer {
+  max-width: 900px;
+  margin: auto;
+}
+
+.contactSection h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.contactSubtext {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #ddd;
+}
+
+.contactButtons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.contactCall,
+.contactText {
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.contactCall {
+  background: #406cef;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.contactCall:hover {
+  background: #406cef;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.contactText {
+  background: white;
+  color: #1f1f1f;
 }
+
+.contactText:hover {
+  background: #ddd;
+}
+
+.contactHours {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.callWrapper {
+  position: relative;
+}
+
+.callDropdown {
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background: white;
+  color: black;
+  border-radius: 6px;
+  box-shadow: 0 5px 14px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+
+.callDropdown a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.callDropdown a:hover {
+  background: #f3f3f3;
+}
+
+

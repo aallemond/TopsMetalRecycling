@@ -1,0 +1,33 @@
+export default function Contact() {
+  return (
+    <section id="contact" className="contactSection">
+
+      <div className="contactContainer">
+
+        <h2>Contact Tops Metal Recycling</h2>
+
+        <p className="contactSubtext">
+          We buy copper, aluminum, brass, catalytic converters, and e-scrap.
+        </p>
+
+        <div className="contactButtons">
+
+          <a href="tel:3373812003" className="contactCall">
+            📞 Call Us
+          </a>
+
+          <a href="sms:3373812003" className="contactText">
+            💬 Text Us
+          </a>
+
+        </div>
+
+        <p className="contactHours">
+          Open Monday – Friday | Call for current pricing
+        </p>
+
+      </div>
+
+    </section>
+  );
+}
