@@ -14,21 +14,21 @@ import circuitBoards from "../data/circuitBoard.json";
 import cpus from "../data/cpu.json";
 import misc from "../data/misc.json";
 import ram from "../data/ram.json";
-import whole from "../data/ram.json";
+import whole from "../data/whole.json";
 
 
 export default function Home() {
 
   const metals = [
-    { title: "Copper", data: copper },
-    { title: "Brass", data: brass },
-    { title: "Aluminum", data: aluminum },
-    { title: "Stainless Steel", data: stainless },
-    { title: "Whole Scrap", data: whole },
-    { title: "Circuit Boards", data: circuitBoards },
-    { title: "CPUs", data: cpus },
-    { title: "RAM", data: ram },
-    { title: "Misc.", data: misc }
+    { id:"copper", title: "Copper", data: copper },
+    { id: "brass", title: "Brass", data: brass },
+    { id: "aluminium",title: "Aluminum", data: aluminum },
+    { id:"stainless",title: "Stainless Steel", data: stainless },
+    { id:"whole", title: "Whole Scrap", data: whole },
+    { id:"circuit",title: "Circuit Boards", data: circuitBoards },
+    { id:"cpus",title: "CPUs", data: cpus },
+    { id:"ram", title: "RAM", data: ram },
+    { id:"misc",title: "Misc.", data: misc }
 
   ];
 
@@ -39,11 +39,16 @@ export default function Home() {
     <About />
 
     <div id="prices">
-      {metals.map((metal) => (
-        <Section key={metal.title} title={metal.title}>
-          <PriceTable data={metal.data} />
-        </Section>
-      ))}
+    {metals.map((metal) => (
+  
+    <Section
+      key={metal.id}
+      id={metal.id}
+      title={metal.title}
+    >
+    <PriceTable data={metal.data} />
+   </Section>
+))}
     </div>
 
      <Contact />

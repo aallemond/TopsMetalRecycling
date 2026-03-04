@@ -1,9 +1,11 @@
 import "../styles/navbar.css"
-// import { useState } from "react";
+import { useState } from "react";
 import CallDropdown from "./CallDropdown";
 
+
+
 export default function Navbar() {
-//   const [open, setOpen] = useState(false);
+const [priceMenu, setPriceMenu] = useState(false);
 
   return (
     <nav className="navbar">
@@ -15,7 +17,33 @@ export default function Navbar() {
 
         <div className="navLinks">
           <a href="#about">About</a>
-          <a href="#prices">Prices</a>
+          <div
+  className="pricesMenu"
+  onClick={() => setPriceMenu(!priceMenu)}
+>
+
+  Prices ▾
+
+  {priceMenu && (
+    <div className="pricesDropdown">
+
+      <a href="#copper">Copper</a>
+      <a href="#brass">Brass</a>
+      <a href="#aluminium">Aluminum</a>
+      <a href="#stainless">Stainless</a>
+      <a href="#whole">Whole Scrap</a>
+      <a href="#circuit">Circuit Boards</a>
+      <a href="#cpus">CPUs</a>
+      <a href="#ram">RAM</a>
+      <a href="#misc">Misc.</a>
+      
+    
+      
+
+    </div>
+  )}
+
+</div>
           <a href="#contact">Contact</a>
         </div>
 

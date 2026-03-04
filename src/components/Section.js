@@ -1,13 +1,10 @@
-export default function Section({ title, children }) {
+export default function Section({ id, title, children }) {
   return (
-    <section className="metalSection">
+    <section id={id} className="metalSection">
 
       <div className="metalCard">
-
         <h2>{title}</h2>
-
         {children}
-
       </div>
 
     </section>
