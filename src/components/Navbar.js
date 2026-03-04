@@ -11,9 +11,9 @@ const [priceMenu, setPriceMenu] = useState(false);
     <nav className="navbar">
       <div className="navContainer">
 
-        <div className="logo">
-          Tops Metal Recycling
-        </div>
+        <a href="#top" className="logo">
+          <img src="/topsLogo.png" alt="Tops Metal Recycling Logo" />
+        </a>
 
         <div className="navLinks">
           <a href="#about">About</a>

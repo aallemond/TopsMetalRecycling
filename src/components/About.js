@@ -22,7 +22,7 @@ export default function About() {
         At the end of 2025, we closed our used auto parts division to focus
         entirely on our recycling operations. Today we are transitioning into
         a full-service scrap yard providing fair prices and responsible
-        recycling for metals, catalytic converters, and e-scrap.
+        recycling for metals, catalytic converters, and e-scrap to the Lake Area.
       </p>
     </section>
   );
