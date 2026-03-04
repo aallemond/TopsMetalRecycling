@@ -26,10 +26,22 @@
   text-decoration: none;
 }
 
+.navLinks .callButton {
+  margin-top: 10px;
+}
+
 .logo img {
   height: 55px;
    display: flex;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+
+  .logo img {
+    height: 40px;
+  }
+
 }
 
 .callButton {
@@ -94,3 +106,55 @@
 .pricesDropdown a:hover {
   background: #f5f5f5;
 }
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #1f1f1f;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .navLinks a {
+    padding: 12px 0;
+    font-size: 18px;
+  }
+
+  .navLinks.active {
+    display: flex;
+  }
+
+  .navContainer {
+  position: relative;
+}
+
+.callWrapper {
+    display: none;
+  }
+
+  .pricesMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+}
+
+

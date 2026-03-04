@@ -42,3 +42,13 @@
   font-weight: 700;
 
 }
+
+@media (max-width: 768px) {
+
+  .priceTable th,
+  .priceTable td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+}

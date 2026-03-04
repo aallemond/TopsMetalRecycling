@@ -5,51 +5,57 @@ import CallDropdown from "./CallDropdown";
 
 
 export default function Navbar() {
-const [priceMenu, setPriceMenu] = useState(false);
+  const [pricesOpen, setPricesOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav className="navbar">
       <div className="navContainer">
 
         <a href="#top" className="logo">
-          <img src="/topsLogo.png" alt="Tops Metal Recycling Logo" />
+          <img src="/tops-logo.png" alt="Tops Metal Recycling" />
         </a>
 
-        <div className="navLinks">
+        <div className="hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
+        </div>
+
+        <div className={`navLinks ${menuOpen ? "active" : ""}`}>
+
           <a href="#about">About</a>
-          <div
-  className="pricesMenu"
-  onClick={() => setPriceMenu(!priceMenu)}
->
 
-  Prices ▾
+          <div className="pricesMenu"
+             onClick={() => setPricesOpen(!pricesOpen)}
+          >
 
-  {priceMenu && (
-    <div className="pricesDropdown">
+             Prices ▾
 
-      <a href="#copper">Copper</a>
-      <a href="#brass">Brass</a>
-      <a href="#aluminium">Aluminum</a>
-      <a href="#stainless">Stainless</a>
-      <a href="#whole">Whole Scrap</a>
-      <a href="#circuit">Circuit Boards</a>
-      <a href="#cpus">CPUs</a>
-      <a href="#ram">RAM</a>
-      <a href="#misc">Misc.</a>
-      
-    
-      
+        {pricesOpen && (
+          <div className="pricesDropdown">
 
-    </div>
-  )}
+            <a href="#copper">Copper</a>
+            <a href="#brass">Brass</a>
+            <a href="#aluminum">Aluminum</a>
+            <a href="#stainless">Stainless</a>
+            <a href="#wire">Insulated Wire</a>
+            <a href="#auto">Automotive</a>
+            <a href="#boards">Circuit Boards</a>
+            <a href="#cpus">CPUs</a>
 
-</div>
+         </div>
+        )}
+
+        </div>
+
           <a href="#contact">Contact</a>
+
         </div>
 
         <CallDropdown
-            buttonText="Call / Text"
-             className="callButton"
+          buttonText="Call / Text"
+          className="callButton"
         />
 
       </div>
