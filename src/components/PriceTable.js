@@ -14,7 +14,7 @@ export default function PriceTable({ data }) {
     },
   {
   accessorKey: "price",
-  header: "Price",
+  header: "Price/lb.",
   cell: ({ getValue }) => {
     const value = getValue();
 
