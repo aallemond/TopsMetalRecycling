@@ -1,5 +1,5 @@
 import "../styles/navbar.css"
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import CallDropdown from "./CallDropdown";
 
 
@@ -7,6 +7,26 @@ import CallDropdown from "./CallDropdown";
 export default function Navbar() {
   const [pricesOpen, setPricesOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pricesRef = useRef(null);
+
+  useEffect(() => {
+
+  const handleClickOutside = (event) => {
+    if (
+      pricesRef.current &&
+      !pricesRef.current.contains(event.target)
+    ) {
+      setPricesOpen(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+
+}, []);
 
   return (
     <nav className="navbar">
@@ -26,10 +46,11 @@ export default function Navbar() {
 
           <a href="#about">About</a>
 
-          <div className="pricesMenu"
-             onClick={() => setPricesOpen(!pricesOpen)}
-          >
-
+        <div
+            ref={pricesRef}
+            className="pricesMenu"
+            onClick={() => setPricesOpen(!pricesOpen)}
+        >
              Prices ▾
 
         {pricesOpen && (
@@ -58,6 +79,8 @@ export default function Navbar() {
           buttonText="Call / Text"
           className="callButton"
         />
+
+        
 
       </div>
     </nav>
