@@ -33,8 +33,8 @@ export default function CallDropdown({ buttonText, className }) {
 
       {open && (
         <div className="callDropdown">
-          <a href="tel:3373812003">📞 Call</a>
-          <a href="sms:3373812003">💬 Text</a>
+          <a href="tel:(337)802-8848">📞 Call</a>
+          <a href="sms:(337)802-8848">💬 Text</a>
         </div>
       )}
 

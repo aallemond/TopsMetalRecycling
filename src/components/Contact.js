@@ -12,11 +12,11 @@ export default function Contact() {
 
         <div className="contactButtons">
 
-          <a href="tel:3373812003" className="contactCall">
+          <a href="tel:(337)802-8848" className="contactCall">
             📞 Call Us
           </a>
 
-          <a href="sms:3373812003" className="contactText">
+          <a href="sms:(337)802-8848" className="contactText">
             💬 Text Us
           </a>
 

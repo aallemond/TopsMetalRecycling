@@ -73,6 +73,25 @@ section {
   margin: 30px auto;
 }
 
+.pricingSection {
+  max-width: 1000px;
+  margin: 80px auto 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.pricingTitle {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pricingSubtitle {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
 .metalSection {
   max-width: 1000px;
   margin: 40px auto;
