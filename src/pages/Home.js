@@ -42,7 +42,7 @@ export default function Home() {
        <h1 className="pricingTitle">Scrap Pricing</h1>
 
   <p className="pricingSubtitle">
-    Prices Current as of 3/3/2026 (Actual pricing may vary.)
+    Prices Updated Regularly (Actual pricing may vary.)
   </p>
 
    {Object.entries(groupedPrices).map(([category, items]) => (
