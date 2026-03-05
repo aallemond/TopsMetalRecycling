@@ -9,6 +9,24 @@ export default function Navbar() {
   const [pricesOpen, setPricesOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pricesRef = useRef(null);
+  const navRef = useRef(null);
+
+  useEffect(() => {
+
+  const handleClickOutside = (event) => {
+    if (navRef.current && !navRef.current.contains(event.target)) {
+      setMenuOpen(false);
+      setPricesOpen(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+
+}, []);
   
 
   useEffect(() => {
@@ -31,7 +49,7 @@ export default function Navbar() {
 }, []);
 
   return (
-    <nav className="navbar">
+   <nav className="navbar" ref={navRef}>
       <div className="navContainer">
 
         <a href="#top" className="logo">
