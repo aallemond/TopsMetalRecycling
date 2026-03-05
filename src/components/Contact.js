@@ -23,7 +23,7 @@ export default function Contact() {
         </div>
 
         <p className="contactHours">
-          Open Monday – Friday | Call for current pricing
+          Open Monday – Friday 9:30am-6:00pm | Call for current pricing
         </p>
 
       </div>
