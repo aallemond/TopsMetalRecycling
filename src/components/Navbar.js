@@ -56,15 +56,15 @@ export default function Navbar() {
         {pricesOpen && (
           <div className="pricesDropdown">
 
-            <a href="#copper">Copper</a>
-            <a href="#brass">Brass</a>
-            <a href="#aluminum">Aluminum</a>
-            <a href="#stainless">Stainless</a>
-            <a href="#wire">Insulated Wire</a>
-            <a href="#escrap">E-Scrap</a>
-            <a href="#whole">Whole Scrap</a>
-            <a href="#cpus">CPUs</a>
-            <a href="#misc">Misc. Scrap</a>
+            <a href="#copper" onClick={() => setPricesOpen(false)}>Copper</a>
+            <a href="#brass" onClick={() => setPricesOpen(false)}>Brass</a>
+            <a href="#aluminum" onClick={() => setPricesOpen(false)}>Aluminum</a>
+            <a href="#stainless" onClick={() => setPricesOpen(false)}>Stainless</a>
+            <a href="#wire" onClick={() => setPricesOpen(false)}>Insulated Wire</a>
+            <a href="#escrap" onClick={() => setPricesOpen(false)}>E-Scrap</a>
+            <a href="#whole" onClick={() => setPricesOpen(false)}>Whole Scrap</a>
+            <a href="#cpus" onClick={() => setPricesOpen(false)}>CPUs</a>
+            <a href="#misc" onClick={() => setPricesOpen(false)}>Misc. Scrap</a>
 
          </div>
         )}
