@@ -1,6 +1,7 @@
 import "../styles/navbar.css"
 import { useState, useEffect, useRef } from "react";
 import CallDropdown from "./CallDropdown";
+import {metals} from "../data/metals.js"
 
 
 
@@ -56,16 +57,15 @@ export default function Navbar() {
         {pricesOpen && (
           <div className="pricesDropdown">
 
-            <a href="#copper" onClick={() => setPricesOpen(false)}>Copper</a>
-            <a href="#brass" onClick={() => setPricesOpen(false)}>Brass</a>
-            <a href="#aluminum" onClick={() => setPricesOpen(false)}>Aluminum</a>
-            <a href="#stainless" onClick={() => setPricesOpen(false)}>Stainless</a>
-            <a href="#wire" onClick={() => setPricesOpen(false)}>Insulated Wire</a>
-            <a href="#escrap" onClick={() => setPricesOpen(false)}>E-Scrap</a>
-            <a href="#whole" onClick={() => setPricesOpen(false)}>Whole Scrap</a>
-            <a href="#cpus" onClick={() => setPricesOpen(false)}>CPUs</a>
-            <a href="#misc" onClick={() => setPricesOpen(false)}>Misc. Scrap</a>
-
+      {metals.map((metal) => (
+  <a
+    key={metal.id}
+    href={`#${metal.id}`}
+    onClick={() => setPricesOpen(false)}
+  >
+    {metal.title}
+  </a>
+))}
          </div>
         )}
 
