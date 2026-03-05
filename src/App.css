@@ -30,7 +30,7 @@ section {
 }
 
 .heroButton {
-  background: #406cef;
+  background: #014b98;
   padding: 16px 34px;
   font-size: 18px;
   font-weight: bold;
@@ -42,7 +42,7 @@ section {
 }
 
 .heroButton:hover {
-  background: #406cef;
+  background: #014b98;
 }
 
 .aboutSection {
@@ -69,7 +69,7 @@ section {
   display: block;
   width: 80px;
   height: 4px;
-  background: #406cef;
+  background: #014b98;
   margin: 30px auto;
 }
 
@@ -108,7 +108,7 @@ section {
 
 .metalCard h2 {
   margin-bottom: 20px;
-  border-left: 6px solid #406cef;
+  border-left: 6px solid #014b98;
   padding-left: 10px;
 }
 
@@ -154,12 +154,12 @@ section {
 }
 
 .contactCall {
-  background: #406cef;
+  background: #014b98;
   color: white;
 }
 
 .contactCall:hover {
-  background: #406cef;
+  background: #014b98;
 }
 
 .contactText {
