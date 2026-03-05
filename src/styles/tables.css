@@ -5,6 +5,7 @@
   margin: 20px 0;
   font-size: 16px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  table-layout: fixed;
 }
 
 .priceTable th {
@@ -18,6 +19,7 @@
 .priceTable td {
   padding: 12px 14px;
   border-bottom: 1px solid #e5e5e5;
+  word-break: break-word;
 }
 
 .priceTable tr:hover {
@@ -26,8 +28,11 @@
 
 .priceTable td:last-child {
   font-weight: bold;
-
+  white-space: normal;
+  word-break: break-word;
 }
+
+
 
 .tableWrapper {
   width: 100%;
