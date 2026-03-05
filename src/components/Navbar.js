@@ -1,6 +1,5 @@
 import "../styles/navbar.css"
 import { useState, useEffect, useRef } from "react";
-import CallDropdown from "./CallDropdown";
 import {metals} from "../data/metals.js"
 
 
@@ -96,14 +95,7 @@ export default function Navbar() {
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
 
         </div>
-
-        <CallDropdown
-          buttonText="Call / Text"
-          className="callButton"
-        />
-
         
-
       </div>
     </nav>
   );
