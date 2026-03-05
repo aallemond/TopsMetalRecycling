@@ -46,7 +46,7 @@ export default function Navbar() {
 
         <div className={`navLinks ${menuOpen ? "active" : ""}`}>
 
-          <a href="#about">About</a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
 
         <div
             ref={pricesRef}
@@ -62,7 +62,10 @@ export default function Navbar() {
   <a
     key={metal.id}
     href={`#${metal.id}`}
-    onClick={() => setPricesOpen(false)}
+   onClick={() => {
+  setPricesOpen(false);
+  setMenuOpen(false);
+}}
   >
     {metal.title}
   </a>
@@ -72,7 +75,7 @@ export default function Navbar() {
 
         </div>
 
-          <a href="#contact">Contact</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
 
         </div>
 
