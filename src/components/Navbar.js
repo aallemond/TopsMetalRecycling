@@ -43,6 +43,7 @@ export default function Navbar() {
             <a href="#escrap">E-Scrap</a>
             <a href="#whole">Whole Scrap</a>
             <a href="#cpus">CPUs</a>
+            <a href="#misc">Misc. Scrap</a>
 
          </div>
         )}
