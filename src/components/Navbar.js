@@ -9,6 +9,7 @@ export default function Navbar() {
   const [pricesOpen, setPricesOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pricesRef = useRef(null);
+  
 
   useEffect(() => {
 

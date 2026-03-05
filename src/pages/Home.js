@@ -3,13 +3,18 @@ import PriceTable from "../components/PriceTable";
 import About from "../components/About";
 import Hero from "../components/Hero";
 import Contact from "../components/Contact";
-import {metals} from "../data/metals"
+// import {metals} from "../data/metals"
+import useScrapPrices from "../hooks/useScrapPrices";
+import groupByCategory from "../utils/groupByCategory";
 
 
 
 
 
 export default function Home() {
+
+  const prices = useScrapPrices();
+  const groupedPrices = groupByCategory(prices);
 
   return (
     <div>
@@ -25,15 +30,18 @@ export default function Home() {
     Prices Current as of 3/3/2026 (Actual pricing may vary.)
   </p>
 
-    {metals.map((metal) => (
-  
-    <Section
-      key={metal.id}
-      id={metal.id}
-      title={metal.title}
-    >
-    <PriceTable data={metal.data} />
-   </Section>
+   {Object.entries(groupedPrices).map(([category, items]) => (
+
+  <Section
+    key={category}
+    id={category}
+    title={category.toUpperCase()}
+  >
+
+    <PriceTable data={items} />
+
+  </Section>
+
 ))}
     </div>
 

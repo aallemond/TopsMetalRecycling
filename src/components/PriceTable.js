@@ -9,13 +9,29 @@ export default function PriceTable({ data }) {
 
   const columns = [
     {
-      accessorKey: "type",
+      accessorKey: "material",
       header: "Type"
     },
-    {
-      accessorKey: "price",
-      header: "Price/lb."
+  {
+  accessorKey: "price",
+  header: "Price",
+  cell: ({ getValue }) => {
+    const value = getValue();
+
+    const numberValue = Number(value);
+
+    // If value isn't a valid price
+    if (!value || isNaN(numberValue) || numberValue > 1000) {
+      return (
+        <span className="callForPrice">
+          Please call or text for pricing
+        </span>
+      );
     }
+
+    return `$${numberValue.toFixed(2)}`;
+  }
+}
   ];
 
   const table = useReactTable({
