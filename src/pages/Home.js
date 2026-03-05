@@ -9,7 +9,22 @@ import groupByCategory from "../utils/groupByCategory";
 
 
 
+function formatCategory(name) {
 
+  if (!name) return "";
+
+  const specialCases = {
+    escrap: "E-Scrap",
+    cpu: "CPUs",
+    ram: "RAM"
+  };
+
+  if (specialCases[name]) {
+    return specialCases[name];
+  }
+
+  return name.charAt(0).toUpperCase() + name.slice(1);
+}
 
 export default function Home() {
 
@@ -35,7 +50,7 @@ export default function Home() {
   <Section
     key={category}
     id={category}
-    title={category.toUpperCase()}
+   title={formatCategory(category)}
   >
 
     <PriceTable data={items} />
