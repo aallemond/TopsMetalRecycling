@@ -1,4 +1,3 @@
-// import Slider from "../components/Slider";
 import Section from "../components/Section";
 import PriceTable from "../components/PriceTable";
 import About from "../components/About";
