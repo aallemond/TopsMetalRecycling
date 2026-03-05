@@ -40,8 +40,8 @@ export default function Navbar() {
             <a href="#aluminum">Aluminum</a>
             <a href="#stainless">Stainless</a>
             <a href="#wire">Insulated Wire</a>
-            <a href="#auto">Automotive</a>
-            <a href="#boards">Circuit Boards</a>
+            <a href="#escrap">E-Scrap</a>
+            <a href="#whole">Whole Scrap</a>
             <a href="#cpus">CPUs</a>
 
          </div>
