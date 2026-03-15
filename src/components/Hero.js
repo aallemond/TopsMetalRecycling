@@ -1,23 +1,21 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
+import "../styles/hero.css"
 import CallDropdown from "./CallDropdown";
 
 export default function Hero() {
 
-  const [open, setOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-useEffect(() => {
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
 
-  const closeDropdown = () => {
-    setOpen(false);
-  };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
 
-  window.addEventListener("click", closeDropdown);
-
-  return () => {
-    window.removeEventListener("click", closeDropdown);
-  };
-
-}, []);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <section className="hero">
@@ -33,16 +31,15 @@ useEffect(() => {
 
         <div className="heroCallWrapper">
 
-       <CallDropdown
-         buttonText="Call or Text for Pricing"
-        className="heroButton"
-       />
-
-          {open && (
-            <div className="heroCallDropdown">
-              <a href="tel:(337)802-8848">📞 Call</a>
-              <a href="sms:(337)802-8848">💬 Text</a>
-            </div>
+          {isMobile ? (
+            <CallDropdown
+              buttonText="Call or Text for Pricing"
+              className="heroButton"
+            />
+          ) : (
+            <a href="#contact" className="heroButton">
+              Contact Us
+            </a>
           )}
 
         </div>
