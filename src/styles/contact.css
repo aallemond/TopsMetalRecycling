@@ -1,0 +1,22 @@
+/* Hide desktop contact info on mobile */
+.contactInfo {
+  display: none;
+}
+
+.contactInfo a {
+  color: white;
+}
+
+@media (min-width: 768px) {
+
+  /* Hide mobile buttons on desktop */
+  .contactButtons {
+    display: none;
+  }
+
+  /* Show contact info on desktop */
+  .contactInfo {
+    display: block;
+  }
+}
+
