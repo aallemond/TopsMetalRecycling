@@ -7,7 +7,7 @@ export default function Contact() {
         <h2>Contact Tops Metal Recycling</h2>
 
         <p className="contactSubtext">
-          We buy copper, aluminum, brass, catalytic converters, and e-scrap.
+          Tops Metal Recycling serves customers in Sulphur, Lake Charles, Westlake, Vinton, Moss Bluff, and surrounding areas of Calcasieu Parish, Louisiana. We buy copper, aluminum, brass, stainless steel, and electronic scrap at competitive prices.
         </p>
 
         <div className="contactButtons">
