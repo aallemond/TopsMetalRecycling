@@ -10,7 +10,7 @@ export default function useScrapPrices() {
       const { data, error } = await supabase
         .from("scrap_prices")
         .select("*")
-        .order("material");
+        .order("display_order", { ascending: true })
 
       if (!error) setPrices(data);
     }

@@ -12,26 +12,7 @@ code {
     monospace;
 }
 
-@media (min-width: 768px) {
-  .heroCallWrapper {
-    margin-top: 30px;
-  }
 
-  /* Hide mobile buttons on desktop */
-  .contactButtons {
-    display: none;
-  }
-
-  /* Show contact info on desktop */
-  .contactInfo {
-    display: block;
-  }
-}
-
-/* Hide desktop contact info on mobile */
-.contactInfo {
-  display: none;
-}
 
   
 
