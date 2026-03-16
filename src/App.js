@@ -1,16 +1,22 @@
 import "./App.css";
-import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
+import { lazy, Suspense } from "react";
+
+// Lazy load components
+const Home = lazy(() => import("./pages/Home"));
+const Navbar = lazy(() => import("./components/Navbar"));
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Home />
+
+      <Suspense fallback={<div></div>}>
+        <Navbar />
+        <Home />
+      </Suspense>
+
     </div>
   );
 }
 
 export default App;
-
 

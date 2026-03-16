@@ -1,11 +1,12 @@
 import Section from "../components/Section";
-import PriceTable from "../components/PriceTable";
 import About from "../components/About";
 import Hero from "../components/Hero";
 import Contact from "../components/Contact";
-// import {metals} from "../data/metals"
 import useScrapPrices from "../hooks/useScrapPrices";
 import groupByCategory from "../utils/groupByCategory";
+import { lazy, Suspense } from "react";
+
+const PriceTable = lazy(() => import("../components/PriceTable"));
 
 
 
@@ -53,7 +54,9 @@ export default function Home() {
    title={formatCategory(category)}
   >
 
-    <PriceTable data={items} />
+   <Suspense fallback={<div>Loading prices...</div>}>
+  <PriceTable data={items} />
+</Suspense>
 
   </Section>
 
