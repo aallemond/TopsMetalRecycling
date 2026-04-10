@@ -12,6 +12,19 @@ export default function Contact() {
           Tops Metal Recycling serves customers in Sulphur, Lake Charles, Westlake, Vinton, Moss Bluff, and surrounding areas of Calcasieu Parish, Louisiana. We buy copper, aluminum, brass, stainless steel, and electronic scrap at competitive prices.
         </p>
 
+        <div className="mapContainer">
+          <iframe
+            src="https://www.google.com/maps?q=420+E+Highway+108+Sulphur+LA&output=embed"
+            width="100%"
+            height="300"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Tops Metal Recycling Location"
+          ></iframe>
+      </div>
+
         {/* Mobile Buttons */}
         <div className="contactButtons">
 

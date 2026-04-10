@@ -14,6 +14,12 @@
     display: none;
   }
 
+  .mapContainer {
+  margin-top: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
   /* Show contact info on desktop */
   .contactInfo {
     display: block;
