@@ -1,4 +1,5 @@
 import Section from "../components/Section";
+import LazySection from "../components/LazySection";
 import About from "../components/About";
 import Hero from "../components/Hero";
 import Contact from "../components/Contact";
@@ -11,6 +12,8 @@ const PriceTable = lazy(() => import("../components/PriceTable"));
 
 
 function formatCategory(name) {
+
+  
 
   if (!name) return "";
 
@@ -31,6 +34,10 @@ export default function Home() {
 
   const prices = useScrapPrices();
   const groupedPrices = groupByCategory(prices);
+
+  if (!prices || prices.length === 0) {
+  return <div>Loading...</div>;
+}
 
   return (
     <div>
@@ -53,10 +60,11 @@ export default function Home() {
     id={category}
    title={formatCategory(category)}
   >
-
+  <LazySection>
    <Suspense fallback={<div>Loading prices...</div>}>
-  <PriceTable data={items} />
-</Suspense>
+    <PriceTable data={items} />
+  </Suspense>
+</LazySection>
 
   </Section>
 
