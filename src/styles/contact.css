@@ -7,18 +7,47 @@
   color: white;
 }
 
+  .mapContainer {
+  margin: 30px 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.facebookLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-top: 20px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  gap: 10px;
+}
+
+.facebookLink svg {
+  font-size: 32px;
+}
+
+.facebookLink p {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.facebookLink:hover {
+  opacity: 0.8;
+}
+
 @media (min-width: 768px) {
 
   /* Hide mobile buttons on desktop */
   .contactButtons {
+    margin-top: 20px;
     display: none;
   }
 
-  .mapContainer {
-  margin-top: 30px;
-  border-radius: 10px;
-  overflow: hidden;
-}
+
 
   /* Show contact info on desktop */
   .contactInfo {

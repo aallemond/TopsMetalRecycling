@@ -1,4 +1,5 @@
 import "../styles/contact.css"
+import { FaFacebook } from "react-icons/fa";
 
 export default function Contact() {
   return (
@@ -51,11 +52,24 @@ export default function Contact() {
             Sulphur, LA 70665
           </p>
 
+      
+
         </div>
 
-        <p className="contactHours">
+          <a
+            href="https://www.facebook.com/topsautorecyclingla"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="facebookLink"
+          >
+           <FaFacebook />
+             <p>Follow Us On Facebook</p>
+          </a>
+
+
+        <span className="contactHours">
           Open Monday – Friday 8:00am-5:00pm | Call for current pricing
-        </p>
+        </span>
 
       </div>
 

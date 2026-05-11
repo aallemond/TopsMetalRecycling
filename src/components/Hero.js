@@ -5,7 +5,6 @@ import CallDropdown from "./CallDropdown";
 export default function Hero() {
 
   const [isMobile, setIsMobile] = useState(false);
-  const [bgLoaded, setBgLoaded] = useState(false);
 
   useEffect(() => {
 
@@ -16,24 +15,12 @@ export default function Hero() {
     checkMobile();
     window.addEventListener("resize", checkMobile);
 
-    // lazy load background
-    const img = new Image();
-    img.src = "https://res.cloudinary.com/dxnwbl21t/image/upload/f_auto,q_auto,w_800/v1767588391/333D4419-ADE8-4E3A-8572-9E336FF1149C_ffqojx.png";
-    img.onload = () => setBgLoaded(true);
-
     return () => window.removeEventListener("resize", checkMobile);
 
   }, []);
 
   return (
-    <section
-      className="hero"
-      style={{
-        backgroundImage: bgLoaded
-          ? `url("https://res.cloudinary.com/dxnwbl21t/image/upload/f_auto,q_auto,w_1200/v1767588391/333D4419-ADE8-4E3A-8572-9E336FF1149C_ffqojx.png")`
-          : "none"
-      }}
-    >
+   <section className="hero">
 
       <div className="heroOverlay">
 

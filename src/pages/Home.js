@@ -1,19 +1,14 @@
 import Section from "../components/Section";
-import LazySection from "../components/LazySection";
 import About from "../components/About";
 import Hero from "../components/Hero";
 import Contact from "../components/Contact";
+import PriceTable from "../components/PriceTable";
+import { useMemo } from "react";
+
 import useScrapPrices from "../hooks/useScrapPrices";
 import groupByCategory from "../utils/groupByCategory";
-import { lazy, Suspense } from "react";
-
-const PriceTable = lazy(() => import("../components/PriceTable"));
-
-
 
 function formatCategory(name) {
-
-  
 
   if (!name) return "";
 
@@ -30,48 +25,75 @@ function formatCategory(name) {
   return name.charAt(0).toUpperCase() + name.slice(1);
 }
 
+
+
+ // Manual category order
+  const categoryOrder = [
+    "aluminum",
+    "brass",
+    "stainless",
+    "misc",
+    "copper",
+    "cpu",
+    "ram",
+    "escrap",
+    "whole"
+  ];
+
 export default function Home() {
 
   const prices = useScrapPrices();
-  const groupedPrices = groupByCategory(prices);
 
-  if (!prices || prices.length === 0) {
-  return <div>Loading...</div>;
-}
+const groupedPrices = useMemo(() => {
+  return groupByCategory(prices || []);
+}, [prices]);
 
   return (
     <div>
 
-    <Hero />
-    <About />
+      <Hero />
 
-    <div id="prices" className="pricingSection">
+      <About />
 
-       <h1 className="pricingTitle">Scrap Pricing</h1>
+      <div id="prices" className="pricingSection">
 
-  <p className="pricingSubtitle">
-    Prices Updated Regularly (Actual pricing may vary.)
-  </p>
+        <h1 className="pricingTitle">
+          Scrap Pricing
+        </h1>
 
-   {Object.entries(groupedPrices).map(([category, items]) => (
+        <p className="pricingSubtitle">
+          Prices Updated Regularly (Actual pricing may vary.)
+        </p>
 
-  <Section
-    key={category}
-    id={category}
-   title={formatCategory(category)}
-  >
-  <LazySection>
-   <Suspense fallback={<div>Loading prices...</div>}>
-    <PriceTable data={items} />
-  </Suspense>
-</LazySection>
+        {Object.entries(groupedPrices)
 
-  </Section>
+          .sort(([a], [b]) => {
 
-))}
-    </div>
+            const indexA = categoryOrder.indexOf(a);
+            const indexB = categoryOrder.indexOf(b);
 
-     <Contact />
+            return (
+              (indexA === -1 ? 999 : indexA) -
+              (indexB === -1 ? 999 : indexB)
+            );
+          })
+
+          .map(([category, items]) => (
+
+            <Section
+              key={category}
+              id={category}
+              title={formatCategory(category)}
+            >
+
+              <PriceTable data={items} />
+
+            </Section>
+          ))}
+
+      </div>
+
+      <Contact />
 
     </div>
   );
