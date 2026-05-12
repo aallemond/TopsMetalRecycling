@@ -1,5 +1,6 @@
 import "./App.css";
 import { lazy, Suspense } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 // Lazy load components
 const Home = lazy(() => import("./pages/Home"));
@@ -13,6 +14,7 @@ function App() {
         <Navbar />
         <Home />
       </Suspense>
+      <Analytics />
 
     </div>
   );
